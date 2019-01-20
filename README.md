@@ -3,4 +3,4 @@ Analysis of Vehicle Collisions in Canada
 
 Project from 2017
 
-The .rmd file has all the info about the project
+Originally a presentation using physical copies of the slides
