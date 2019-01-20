@@ -1,8 +1,7 @@
 ---
   title: "Most Harzardous Driving Area of Canada?"
-author: "TUT0101B-B1"
-subtitle: Yang Jin(1004183135), Lucas Xian(1004187514), Tony Chen(1004265298), Qianshu
-Ni(1004025477)
+author: "CEDLucien"
+subtitle: Ommited
 output:
   ioslides_presentation: default
 beamer_presentation: default
