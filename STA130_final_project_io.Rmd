@@ -3,8 +3,8 @@ title: "Most Harzardous Driving Area of Canada?"
 author: "CEDLucien"
 subtitle: Redacted
 output:
-  ioslides_presentation: default
   beamer_presentation: default
+  ioslides_presentation: default
   widescreen: yes
 ---
 
@@ -115,10 +115,7 @@ total_incident <- inner_join(total_incident, state_Mpv, by = "State")
 can_pop <- can_pop %>% select(State, Population)
 total_incident <- inner_join(total_incident, can_pop, by = "State")
 total_incident<- total_incident %>% mutate(P_Hdt = (total_Hdt/Population)*100, P_Mdt = (total_Mdt/Population)*100, P_Ldt = (total_Ldt/Population)*100, P_Car = (total_Car/Population)*100, P_Mpv = (total_Mpv/Population)*100)
-#total_incident <- inner_join(total_incident,total_num_incident, by = 'State')
 
-#total_incident<- total_incident %>% mutate(P_H = (total_Hdt/total_inci)*100, P_M = (total_Mdt/total_inci)*100, P_L = (total_Ldt/total_inci)*100, P_C = (total_Car/total_inci)*100, P_M = (total_Mpv/total_inci)*100)
-#total_incident
 ```
 
 ## Statistical Methods
@@ -140,35 +137,35 @@ Mean_total_plot
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE}
 quebec <- c(rep("other", 7), "Quebec", "other")
-g1<-ggplot(total_incident, aes(y= P_Hdt, x= State, fill = quebec)) + geom_col() + coord_flip() + ylab("Probability of Heavy Duty Truck Incident to Population") + ggtitle("Probability of Heavy Duty Truck Incident to Population of each Province") + theme(plot.title = element_text(hjust = 0.5))
+g1<-ggplot(total_incident, aes(y= P_Hdt, x= State, fill = quebec)) + geom_col() + coord_flip() + ylab("Rate") + ggtitle("Rate of Heavy Duty Truck Incident to Population of each Province") + theme(plot.title = element_text(hjust = 0.5))
 g1
 ```
 
 ---
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
-g2<-ggplot(total_incident, aes(y= P_Mdt, x= State, fill = quebec)) + geom_col() + coord_flip()+ ylab("Probability of Medium Duty Truck Incident to Population")+ ggtitle("Probability of Medium Duty Truck Incident to Population of each Province") + theme(plot.title = element_text(hjust = 0.5))
+g2<-ggplot(total_incident, aes(y= P_Mdt, x= State, fill = quebec)) + geom_col() + coord_flip()+ ylab("Rate")+ ggtitle("Rate of Medium Duty Truck Incident to Population of each Province") + theme(plot.title = element_text(hjust = 0.5))
 g2
 ```
 
 ---
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
-g3<-ggplot(total_incident, aes(y= P_Ldt, x= State, fill = quebec)) + geom_col() + coord_flip()+ ylab("Probability of Light Duty Truck Incident to Population") + ggtitle("Probability of Light Duty Truck Incident to Population of each Province") + theme(plot.title = element_text(hjust = 0.5))
+g3<-ggplot(total_incident, aes(y= P_Ldt, x= State, fill = quebec)) + geom_col() + coord_flip()+ ylab("Rate") + ggtitle("Rate of Light Duty Truck Incident to Population of each Province") + theme(plot.title = element_text(hjust = 0.5))
 g3
 ```
 
 ---
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
-g4<-ggplot(total_incident, aes(y= P_Car, x= State, fill = quebec)) + geom_col() + coord_flip()+ ylab("Probability of Car Incident to Population") + ggtitle("Probability of Car Incident to Population of each Province") + theme(plot.title = element_text(hjust = 0.5))
+g4<-ggplot(total_incident, aes(y= P_Car, x= State, fill = quebec)) + geom_col() + coord_flip()+ ylab("Rate") + ggtitle("Rate of Car Incident to Population of each Province") + theme(plot.title = element_text(hjust = 0.5))
 g4
 ```
 
 ---
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
-g5<-ggplot(total_incident, aes(y= P_Mpv, x= State, fill = quebec)) + geom_col() + coord_flip() + ylab("Probability of Multi-Passenger Vehicle Incident to Population")+ ggtitle("Probability of Multi-Passenger Vehicle Incident to Population of each Province")
+g5<-ggplot(total_incident, aes(y= P_Mpv, x= State, fill = quebec)) + geom_col() + coord_flip() + ylab("Rate")+ ggtitle("Rate of Multi-Passenger Vehicle Incident to Population")
 g5
 ```
 
